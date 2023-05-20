@@ -15,6 +15,7 @@
 7.新的UI
 8.全WSS
 剩下的自己看吧视频吧 懒得扯皮了 [手动狗头]
+https://www.bilibili.com/video/BV1EX4y1C7jE/?spm_id_from=333.999.0.0&vd_source=247eccf88822f409670040957c2f29a9
 ## 另外 此版本并不是最终版本 主要是WEB端页面会大改 
 
 
