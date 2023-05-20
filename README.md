@@ -12,7 +12,6 @@
 1. 创建MySQL数据库 取名为 super_web
 2. 将项目中的.sql文件执行到该库中 也就是导入表数据
 3. ~ 找到application-prod.yml 将SSL证书放置在同目录下 , 如果使用其他方式配置请忽略(只是为了后期适配小程序) ~
-4. 另外we-chat参数为必填
 ```yaml
 ## application-prod.yml
 server:
@@ -24,7 +23,7 @@ server:
 
 
 ```
-5. 找到application-prod.yml 配置好mysql以及redis中间件 以及管理员邮箱账号
+4. 找到application-prod.yml 配置好mysql以及redis中间件 以及管理员邮箱账号
 ```yaml
 ## application-prod.yml
 server:
