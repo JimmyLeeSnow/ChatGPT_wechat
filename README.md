@@ -14,9 +14,9 @@
 6.更多功能
 7.新的UI
 8.全WSS
-
-## 另外 此版本并不是最终版本 主要是WEB端页面会大改 
 剩下的自己看吧视频吧 懒得扯皮了 [手动狗头]
+## 另外 此版本并不是最终版本 主要是WEB端页面会大改 
+
 
 
 [GitHub作者主页](https://github.com/dulaiduwang003/ChatGPT_wechat)
