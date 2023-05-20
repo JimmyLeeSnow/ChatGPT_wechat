@@ -1,6 +1,5 @@
 # 部署教程
 > v0.0.1 2023/5/20
-> 每周末更新功能 有想法或者重大BUG群里笔记
 [GitHub作者主页](https://github.com/dulaiduwang003/ChatGPT_wechat)
 
 ## Linux准备环境 (必须)
