@@ -1,0 +1,35 @@
+server:
+#   SSL证书
+  ssl:
+    key-store: XXXX.pfx
+    key-store-password: XXXXX
+    key-store-type: PKCS12
+
+spring:
+  data:
+    redis:
+      database: 4
+      host: 服务器ip
+      port: 端口号
+      password: 'redis密码'
+  # 这里方式很多
+  mail:
+    # 这里具体看你 我用的是QQ的
+    host: smtp.qq.com
+    username: 邮箱
+    password: 邮箱授权码
+    default-encoding: UTF-8
+  datasource:
+    url: jdbc:mysql://服务器ip:端口号/super_web?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&allowMultiQueries=true&useSSL=true
+    username: mysql账号
+    password: 'mysql密码'
+
+# 管理员账号
+console:
+  email: '管理员邮箱 例如 2074055628@qq.com'
+  password: '管理员密码'
+
+file:
+  ## 缓存路径
+  path: /apps/chat/resource/
+
