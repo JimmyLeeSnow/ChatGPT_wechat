@@ -1,5 +1,6 @@
 package com.cn.app.superbot.service.impl;
 
+import cn.dev33.satoken.secure.SaSecureUtil;
 import cn.dev33.satoken.stp.SaLoginConfig;
 import cn.dev33.satoken.stp.StpUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -92,10 +93,11 @@ public class AuthServiceImpl extends ServiceImpl<UserMapper, SuperUser> implemen
      */
     @Override
     public String userLogin(final UserLoginDto dto, final boolean isAdmin) {
+        final String password = SaSecureUtil.md5(dto.getPassword());
         final SuperUser superUser = userMapper.selectOne(new QueryWrapper<SuperUser>()
                 .lambda()
                 .eq(SuperUser::getEmail, dto.getEmail())
-                .eq(SuperUser::getPassword, dto.getPassword())
+                .eq(SuperUser::getPassword, password)
         );
         if (superUser != null) {
             StpUtil.login(superUser.getId(), SaLoginConfig
@@ -122,10 +124,13 @@ public class AuthServiceImpl extends ServiceImpl<UserMapper, SuperUser> implemen
                     .lambda().eq(SuperUser::getEmail, dto.getEmail())
                     .select(SuperUser::getId));
             if (superUser != null) {
+
                 throw new RegisterException(MsgConstants.ACCOUNT_ALREADY_EXISTS_ERR, 400);
             }
             final OperateStructure operateStructure = ChatComment.operateStructure;
             superUser = BeanUtils.copyClassProperTies(dto, SuperUser.class);
+            superUser.setPassword(SaSecureUtil.md5(superUser.getPassword()));
+
             userMapper.insert(superUser.setId(idGenerator.getSnowflakeId()).setFrequency(operateStructure.getUserFrequency()));
         } else {
             throw new RegisterException(MsgConstants.CODE_ERR, 400);

@@ -49,6 +49,7 @@ public class AuthApi {
     @PostMapping(value = "/email/login", name = "email login", produces = MediaType.APPLICATION_JSON_VALUE)
     public Result emailLogin(@RequestBody @Validated UserLoginDto dto) {
         try {
+            
             return Result.data(authService.userLogin(dto, false));
         } catch (CustomException e) {
             return Result.error(e.getMessage(), e.getCode());
